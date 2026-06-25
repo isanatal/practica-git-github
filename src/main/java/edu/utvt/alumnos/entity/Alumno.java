@@ -7,7 +7,8 @@ public class Alumno {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
-    private String correoElectronico;  // ← NUEVO CAMPO
+    private String correoElectronico;  // ← DE feature/correo
+    private String telefono;           // ← DE feature/telefono
 
     public Alumno() {}
 
@@ -34,6 +35,9 @@ public class Alumno {
     public String getApellidoMaterno() { return apellidoMaterno; }
     public void setApellidoMaterno(String apellidoMaterno) { this.apellidoMaterno = apellidoMaterno; }
 
-    public String getCorreoElectronico() { return correoElectronico; }  // ← NUEVO GETTER
-    public void setCorreoElectronico(String correoElectronico) { this.correoElectronico = correoElectronico; }  // ← NUEVO SETTER
+    public String getCorreoElectronico() { return correoElectronico; }
+    public void setCorreoElectronico(String correoElectronico) { this.correoElectronico = correoElectronico; }
+
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
 }
