@@ -1,34 +1,37 @@
+cat > src\main\java\edu\utvt\alumnos\entity\Alumno.java << 'EOF'
 package edu.utvt.alumnos.entity;
 
-import jakarta.persistence.*;
-import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-@Data
-@Entity
-@Table(name = "alumnos", indexes = {
-    @Index(name = "idx_matricula", columnList = "matricula"),
-    @Index(name = "idx_correo_electrónico", columnList = "correo_electrónico"),
-    @Index(name = "idx_activo", columnList = "activo")
-})
 public class Alumno {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private Long id;
-
-    @Column(length = 20, nullable = false, unique = true)
     private String matricula;
-
-    @Column(length = 100, nullable = false)
     private String nombre;
-
-    @Column(name = "apellido_paterno", length = 100, nullable = false)
     private String apellidoPaterno;
-
-    @Column(name = "apellido_materno", length = 100)
     private String apellidoMaterno;
+
+    public Alumno() {}
+
+    public Alumno(String matricula, String nombre, String apellidoPaterno, String apellidoMaterno) {
+        this.matricula = matricula;
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+    }
+
+    // Getters y Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getMatricula() { return matricula; }
+    public void setMatricula(String matricula) { this.matricula = matricula; }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public String getApellidoPaterno() { return apellidoPaterno; }
+    public void setApellidoPaterno(String apellidoPaterno) { this.apellidoPaterno = apellidoPaterno; }
+
+    public String getApellidoMaterno() { return apellidoMaterno; }
+    public void setApellidoMaterno(String apellidoMaterno) { this.apellidoMaterno = apellidoMaterno; }
 }
+EOF
