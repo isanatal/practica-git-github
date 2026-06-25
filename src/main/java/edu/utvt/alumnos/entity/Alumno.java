@@ -1,4 +1,3 @@
-cat > src\main\java\edu\utvt\alumnos\entity\Alumno.java << 'EOF'
 package edu.utvt.alumnos.entity;
 
 public class Alumno {
@@ -8,6 +7,7 @@ public class Alumno {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+    private String telefono;  // ← NUEVO CAMPO
 
     public Alumno() {}
 
@@ -33,5 +33,7 @@ public class Alumno {
 
     public String getApellidoMaterno() { return apellidoMaterno; }
     public void setApellidoMaterno(String apellidoMaterno) { this.apellidoMaterno = apellidoMaterno; }
+
+    public String getTelefono() { return telefono; }  // ← NUEVO GETTER
+    public void setTelefono(String telefono) { this.telefono = telefono; }  // ← NUEVO SETTER
 }
-EOF
